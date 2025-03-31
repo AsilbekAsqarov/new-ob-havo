@@ -28,7 +28,11 @@ let nightPecip  = document.getElementById("nightPecip");
     sunrise.innerHTML = sunrise1;
     sunset.innerHTML = sunset1;
     updateSunProgress(sunrise1, sunset1); 
-   
+      if(data.current_weather.is_day == 0){
+        toggleTime(0)
+    }else{
+        toggleTime(1)
+    }
     temp.innerHTML = `${Math.round(data.current_weather.temperature)}°`;
     if (data.daily.temperature_2m_min[0] == data.daily.temperature_2m_max[0]) {
    maxMin.innerHTML = `${Math.floor(data.daily.temperature_2m_min[0])}°`;
