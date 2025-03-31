@@ -312,10 +312,8 @@ function rainCloud (){
         
             if (currentTime < sunriseMinutes) {
                 progress = 0; // Quyosh hali chiqmagan
-                toggleTime(1)
             } else if (currentTime > sunsetMinutes) {
                 progress = 100; // Quyosh botgan
-                toggleTime(0)
             } else {
                 progress = ((currentTime - sunriseMinutes) / (sunsetMinutes - sunriseMinutes)) * 100;
             }
