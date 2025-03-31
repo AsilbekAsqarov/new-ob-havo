@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="./stayle/stayle.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <canvas id="weatherCanvas"></canvas>
+<header>
+  <div class="header-container">
+    <div class="loctionNameDiv">
+        <h2 class="loctionName">Yuklanmoqda...</h2>
+        <h1 class="temp">56°</h1>
+        <h4 class="weatherName">Ochiq havo0</h4>
+        <h6 class="maxMin">11/12</h6>
+    </div>
+    <div class="sky">
+        <div class="sun"></div>
+        <div class="moon hidden"></div>
+        <div class="stars hidden"></div>
+        <div class="wind"></div>
+    </div>
+  </div>
+
+</header>
+<div class="loader-div" id="loader">
+    <div class="loader"></div>
+  </div>
+<main>
+    <div class="weather-summary">
+        <div class="weather-item"><span>🌡 His qilinmoqda:</span> <span id="feeling">...</span></div>
+        <div class="weather-item"><span>⛅ Bulutlar zichligi:</span> <span id="cloudDensity">...</span></div>
+        <div class="weather-item"><span>💧 Namlik:</span> <span id="humidity">...</span></div>
+        <div class="weather-item"><span>🌬 Shamol tezligi:</span> <span id="windSpeed">...</span></div>
+        <div class="weather-item"><span>☔ Yog‘ingarchilik:</span> <span id="precip">...</span></div>
+        <div class="weather-item"><span>👀 Ko‘rinish:</span> <span id="visibility">...</span></div>
+        <!-- Quyosh chiqishi va botishi -->
+        <div class="sun-time-text">☀️ Quyosh chiqishi-botishi</div>
+        <div class="progress-container">
+            <div class="progress-bar" id="sunProgress"></div>
+        </div>
+        <div class="weather-item"><span id="sunrise">00:00</span> <span id="sunset">00:00</span></div>
+    </div>
+    <div class="wrapper">
+        <div class="buttons">
+            <button class="button active" onclick="showWeather('hourly', this)">Bugun</button>
+            <button class="button" onclick="showWeather('daily', this)">Soat</button>
+        </div>
+        <div id="hourly" class="weather-info active">
+            <h2>Kun davomida</h2>
+            <div class="weather-list" id="dailyList">
+                <div class="weather-box"><span>Tong</span><span id="morningIcon">...</span><span id="morningTemp">...</span><span id="morningPecip">...</span></div>
+                <div class="weather-box"><span>Kun</span><span id="dayIcon">...</span><span id="dayTemp">...</span><span id="dayPecip">...</span></div>
+                <div class="weather-box"><span>Shom</span><span id="eveningIcon">...</span><span id="eveningTemp">...</span><span id="eveningPecip">...</span></div>
+                <div class="weather-box"><span>Tun</span><span id="nightIcon">...</span><span id="nightTemp">...</span><span id="nightPecip">...</span></div>
+            </div>
+        </div>
+        <div id="daily" class="weather-info">
+            <h2>12 soat davomida</h2>
+            <div class="weather-list" id="hourlyList"></div>
+        </div>
+        </div>
+        <div class="earthquake">
+            <h2 class="earthquakeH2">Oxirgi zil-zila</h2>
+            <div class="weather-item"><span>Vaqti:</span><span id="earthquakeTime">Yuklanmoqda...</span></div>
+            <div class="weather-item"><span>Joyi:</span> <span id="earthquakeLocation">Yuklanmoqda...</span></div>
+            <div class="weather-item"><span>Magnituda:</span> <span id="earthquakeMag">Yuklanmoqda...</span></div>
+            <div class="weather-item"><span>Chuqurligi:</span> <span id="earthquakeDepth">Yuklanmoqda...</span></div>
+            <h2 class="earthquakeH2">Kutilayotgan zil-zila</h2>
+            <div class="weather-item"><span>Joyi:</span> <span id="expectedLocation">Yuklanmoqda...</span></div>
+            <div class="weather-item"><span>Taxminiy magnituda:</span> <span id="expectedMag">Yuklanmoqda...</span></div>
+            <div class="btn-container">
+                <button class="buttonMap" id="zilzilaBtn">🗺 Zilzila xaritasini ko‘rsatish</button>
+            </div>
+            <div id="mapZilzila"></div>
+        </div>
+    <div class="days" id="daysDiv"></div>
+</main>
+<footer>
+
+</footer>
+<script src="./script/index.js"></script>
+<script src="./script/earthquake.js"></script>
+<script src="./script/request.js"></script>
+<script src="./script/api.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>
