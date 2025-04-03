@@ -280,9 +280,9 @@ t.appendChild(container);
 //Kunlardavomida
 const weekDays = ["Yak", "Dush", "Sesh", "Chor", "Pay", "Jum", "Shan"];
 // Faqat 7 kunni ko'rsatish uchun cheklash
-const numOfDays = 7;
+const numOfDays = 8;
 
-data.daily.time.slice(0, numOfDays).forEach((dateStr, i) => {
+data.daily.time.slice(1, numOfDays).forEach((dateStr, i) => {
     let date = new Date(dateStr);
     let day = String(date.getDate()).padStart(2, '0'); // Kun (01-31)
     let month = String(date.getMonth() + 1).padStart(2, '0'); // Oy (01-12)
