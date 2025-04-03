@@ -39,7 +39,7 @@ let nightPecip  = document.getElementById("nightPecip");
     } else {
       maxMin.innerHTML = `${Math.floor(
         data.daily.temperature_2m_min[0]
-      )}/${Math.floor(data.daily.temperature_2m_max[0])}°`;
+      )}°/${Math.floor(data.daily.temperature_2m_max[0])}°`;
     }
     if(data.current_weather.weathercode == 0 && data.current_weather.is_day == 0){
       createStars();
