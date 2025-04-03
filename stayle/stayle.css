@@ -352,9 +352,9 @@ header {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    background: white;
+    background: #0056b3;
     border-radius: 5px;
-    color: black;
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }
