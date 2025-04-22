@@ -31,16 +31,8 @@ const getLocation = (lat, lon) => {
       .catch(() => {
         loctionName.innerText = "Joylashuvni olib bo'lmadi";
       });
-  }; 
+  };
 
-function LocationFromAndroid(lat, lon) {
-  getWeather(lat, lon)
-    .then((data) => updateLive(data))
-    .catch(() => {
-      alert("Ob havoni olib bo'lmadi");
-    });
-  getLocation(lat, lon);
-}
   //Location
   function Location() {
     if (navigator.geolocation) {
